@@ -144,7 +144,7 @@ MAX_GROUP_MESSAGES_PER_MINUTE=20
 
 1. 下载 docker-compose.yml:
 ```bash
-wget https://raw.githubusercontent.com/Hamster-Prime/Telegram_Anti-harassment_two-way_chatbot/main/docker-compose.yml
+wget https://raw.githubusercontent.com/Howaboutcoffee/Telegram_Anti-harassment_two-way_chatbot/refs/heads/main/docker-compose.yml
 ```
 
 2. 使用 Docker Compose 运行:
