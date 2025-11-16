@@ -57,7 +57,8 @@ cd tg-bot-data
 2. 下载 .env.example 配置文件模板，并重命名为 .env
 
 ```bash
-# wget https://raw.githubusercontent.com/Hamster-Prime/Telegram_Anti-harassment_two-way_chatbot/main/.env.example -O .env
+# wget https://raw.githubusercontent.com/Howaboutcoffee/Telegram_Anti-harassment_two-way_chatbot/refs/heads/main/.env.example -O .env
+
 ```
 
 3. 编辑 .env 文件，填入您的配置
