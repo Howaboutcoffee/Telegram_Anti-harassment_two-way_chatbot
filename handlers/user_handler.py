@@ -106,8 +106,25 @@ async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
     
     
     user_data = await db.get_user(user.id)
-    if not user_data or not user_data.get('is_verified'):
-        
+    
+    if not user_data:
+        await db.add_user(
+            user_id=user.id,
+            username=user.username,
+            first_name=user.first_name,
+            last_name=user.last_name,
+            language_code=user.language_code
+        )
+        welcome_message = (
+            f"你好, {user.first_name}!\n\n"
+            "欢迎使用双向聊天机器人。\n"
+            "你可以直接在这里发送消息，管理员会尽快回复你。\n\n"
+            "不过，在你发送第一条消息前，请先完成人机验证。"
+        )
+        await update.message.reply_text(welcome_message)
+        user_data = await db.get_user(user.id)
+
+    if not user_data.get('is_verified'):
         context.user_data['pending_update'] = update
         question, keyboard = await create_verification(user.id)
         await update.message.reply_text(question, reply_markup=keyboard)
